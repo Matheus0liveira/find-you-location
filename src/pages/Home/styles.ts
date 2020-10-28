@@ -39,7 +39,7 @@ export const Text = styled.h1`
 `;
 
 export const Wrapper = styled.div`
-  width: 40%;
+  /* width: 40%; */
 `;
 export const Buttons = styled.div`
   display: flex;
