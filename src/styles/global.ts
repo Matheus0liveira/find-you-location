@@ -13,6 +13,14 @@ const GlobalStyles = createGlobalStyle`
     font-size: 62.5%;
   }
 
+  html,body,#root{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    background: #282A36;
+  }
 
 
 `;
