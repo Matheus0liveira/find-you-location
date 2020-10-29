@@ -1,46 +1,52 @@
-# Getting Started with Create React App
+<div align="center">
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<img src="./.github/logo-dark.svg">
 
-## Available Scripts
+</div>
 
-In the project directory, you can run:
+<hr/>
+<br/>
+<br/>
+<br/>
 
-### `yarn start`
+# 🚀 Install
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Install dependencies
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+```shell
 
-### `yarn test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+#YARN
+$ yarn
 
-### `yarn build`
+#NPM
+$ npm install
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Token the Map
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `yarn eject`
+Enter site the <a src="https://www.mapbox.com/">mapbox</a> and create an account, a token will be generated, in your project create a .env file and insert:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+#####
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+ REACT_APP_MAPBOX_TOKEN={your_token}
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+<br/>
+<br/>
+<br/>
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+# ⚙ Execute project
 
-## Learn More
+### Running following command
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```shell
+
+#YARN
+$ yarn start
+
+#NPM
+$npm start
+``` 
