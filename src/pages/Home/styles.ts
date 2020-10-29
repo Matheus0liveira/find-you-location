@@ -11,7 +11,7 @@ export const Img = styled.img`
 
 export const BoxFloat = styled.div`
   position: absolute;
-  top: 18%;
+  top: 16.5%;
   z-index: 9999;
 
   width: 50%;
@@ -63,4 +63,69 @@ export const Button = styled.button<PropsButton>`
     css`
       color: #c7c7c7;
     `}
+`;
+
+export const MapContainer = styled.div`
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+
+  .map-popup {
+    /* height: 0rem; */
+    padding: 1rem;
+    background: #fff;
+    margin-bottom: 3rem;
+    border-radius: 1rem;
+    width: 13rem;
+    margin-right: 0.8rem;
+  }
+  .map-popup .leaflet-popup-content-wrapper {
+    /* height: 0rem; */
+    background: #ff5555;
+    box-shadow: none;
+    border-radius: 1rem;
+  }
+  .leaflet-popup-tip-container {
+    margin-top: 0.9rem;
+  }
+  div.leaflet-popup-content {
+    width: 5px;
+    margin: 0;
+  }
+`;
+
+export const PopUpButton = styled.button`
+  width: 53%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.8rem;
+  background: none;
+  color: #fff;
+
+  border: 0;
+  padding: 1rem;
+
+  cursor: pointer;
+`;
+
+export const Favorites = styled.div`
+  display: grid;
+
+  /* display: flex; */
+  flex-direction: row;
+  grid-template-columns: repeat(4, 1fr);
+
+  div {
+    border: 0.2rem solid #ffb86c;
+    border-radius: 1rem;
+    margin: 0.5rem 1rem;
+
+    p {
+      text-align: center;
+      margin: 0.5rem 2rem;
+    }
+  }
 `;
