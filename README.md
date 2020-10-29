@@ -50,3 +50,12 @@ $ yarn start
 #NPM
 $npm start
 ``` 
+
+<br/>
+<br/>
+<br/>
+
+### 🎥 Image
+
+
+<img src="./.github/image.gif">
