@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import * as S from './styles';
 import { Map, TileLayer, Marker, Popup } from 'react-leaflet';
 import L, { LeafletMouseEvent } from 'leaflet';
@@ -12,8 +12,16 @@ const Home = () => {
   const [position, setPosition] = useState({ latitude: 0, longitude: 0 });
   const [locations, setLocations] = useState([{ latitude: 0, longitude: 0 }]);
 
-  const latRef = useRef<HTMLInputElement>(null);
-  const longRef = useRef<HTMLInputElement>(null);
+  useEffect(() => {
+    const storage = localStorage.getItem('@map:favorites');
+    if (storage) {
+      setLocations(JSON.parse(storage));
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem('@map:favorites', JSON.stringify(locations));
+  }, [locations]);
 
   const handleMapClick = (event: LeafletMouseEvent) => {
     const { lat, lng } = event.latlng;
@@ -32,16 +40,26 @@ const Home = () => {
     setLocations([...locations, position]);
   };
 
+  const handleDeleteFavorite = (latitude: number) => {
+    const deleteFav = locations.filter(
+      (location) => location.latitude !== latitude
+    );
+
+    localStorage.setItem('@map:favorites', JSON.stringify(deleteFav));
+
+    setLocations(deleteFav);
+  };
+
   return (
     <>
       <S.Img src={Logo} alt="" />
       <S.BoxFloat>
         <S.Wrapper>
           <S.Text>
-            Lat <span ref={latRef}>{position.latitude}</span>
+            Lat <span>{position.latitude}</span>
           </S.Text>
           <S.Text>
-            Long <span ref={longRef}>{position.longitude}</span>
+            Long <span>{position.longitude}</span>
           </S.Text>
           <S.Buttons>
             <S.Button styleButton="icon" onClick={handleFavoritePosition}>
@@ -78,7 +96,6 @@ const Home = () => {
           />
 
           <Marker
-            interactive={true}
             icon={L.icon({
               iconUrl: MapMarker,
               iconSize: [58, 68],
@@ -106,7 +123,9 @@ const Home = () => {
                 maxWidth={240}
                 className="map-popup"
               >
-                <S.PopUpButton onClick={() => alert('Delete')}>
+                <S.PopUpButton
+                  onClick={() => handleDeleteFavorite(location.latitude)}
+                >
                   DELETE <FiTrash size={16} color="#FFFF" />
                 </S.PopUpButton>
               </Popup>

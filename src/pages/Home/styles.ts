@@ -114,8 +114,6 @@ export const PopUpButton = styled.button`
 export const Favorites = styled.div`
   display: grid;
 
-  /* display: flex; */
-  flex-direction: row;
   grid-template-columns: repeat(4, 1fr);
 
   div {
